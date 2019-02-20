@@ -1,0 +1,79 @@
+{
+	"version":"1.0.0",
+	"name":"Common",// 应用名称
+	"type":"app",// 应用类型 app 为普通应用
+	"port":"8080",/* 应用监听的端口 */
+	"host":"127.0.0.1",//绑定的ip地址 127.0.0.1 192.168.43.189
+	"debug":"1", /* 1：调试模式，0：为生产模式，用于编译成发布版本  */
+	"cross":1,//1 表示可以跨域， 0 表示禁用跨域访问
+	"pagination":{
+		"page":"1", /*默认分页页数*/
+		"psize":"30"/*默认分页条数*/
+	},
+	"cacheDefaultExpire":"300",/*缓存默认时间，单位 秒*/
+	"staticPath":["static","dist"],/*静态目录*/
+	"viewPath":"dist",/*html 模板路径*/
+	/*cookie 的生肖时间 单位 秒*/
+	"cookie":{
+		"expire":"1200"
+	},
+	"session":0,// 启用session
+	
+	"db":{
+		"host":"127.0.0.1",
+		"db":"dop_article",
+		"uname":"root",
+		"pwd":"11111111"
+	},
+	
+	/*redis配置*/
+	"redis":{
+		"host":"127.0.0.1",
+		"port":"6379",
+		"pass":"123456",
+		"use":"1"
+	},
+
+	// debug auth info 调试模式下的 授权信息，注意，上线后将取消 
+	"debugAuth":{
+		"userInfo":{
+			"uid":"1",
+			"allRight":[],//账号的权限  添加主账号的权限 "dopCloud/api/sys/addSysUser"
+			"type":"main" 	
+		}
+	},
+	
+	// 应用的注册信息
+	"appRegister":{
+		"use":0,// 是否开始注册应用
+		"serverName":"",// 注册地址
+		"url":"http://www.baidu.com",// 应用的公网地址
+		"secret":"",// 注册secret
+		"appName":"",// 应用名称
+		"desc":"管理员以及权限管理应用",// 应用描述
+		"icon":"el-icon-circle-plus"// 应用图标
+	},
+
+	/*前端项目 */
+	"browserProject":[
+		{
+			"name":"dopArticle",/*项目名，与browserSrc 下的目录名 一致*/
+			"remark":"文章管理系统",// 备注，应用中文名
+			"appId":"",// 云平台的应用id
+			"width":"1000",
+			"height":"700",
+			"icon":"el-icon-warning",//应用图标
+			"port":"82",/*监听的端口*/
+			"active":"1" /* 如果为true 则该项目处于调试模式，webpack将实时编译*/
+		}
+	],
+	// 前端单页应用
+	"ui":[
+		{
+			"name":"test",// 应用名称
+			"port":"82",/*监听的端口*/
+			"active":0// 是否启动
+		}
+	]
+
+}

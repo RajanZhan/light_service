@@ -1,0 +1,51 @@
+{
+	"version":"1.0.0",
+	"name":"pkgTool",// 应用名称
+	"type":"app",// 应用类型 app 为普通应用
+	"port":"82",/* 应用监听的端口 */
+	"host":"127.0.0.1",//绑定的ip地址 127.0.0.1 
+	"debug":"1", /* 1：调试模式，0：为生产模式，用于编译成发布版本  */
+	"cross":1,//1 表示可以跨域， 0 表示禁用跨域访问
+	"pagination":{
+		"page":"1", /*默认分页页数*/
+		"psize":"30"/*默认分页条数*/
+	},
+	"corePath":"../core/",// 核心库的地址
+	"cacheDefaultExpire":"300",/*缓存默认时间，单位 秒*/
+	"staticPath":["static","dist"],/*静态目录*/
+	"viewPath":"views",/*html 模板路径*/
+	/*cookie 的生肖时间 单位 秒*/
+	"cookie":{
+		"expire":"1200"
+	},
+	"session":0,// 启用session
+	
+	"db":{
+		"host":"127.0.0.1",
+		"db":"dop_article",
+		"uname":"root",
+		"pwd":"11111111"
+	},
+	
+	/*redis配置*/
+	"redis":{
+		"host":"127.0.0.1",
+		"port":"6379",
+		"pass":"123456",
+		"use":"1"
+	},
+
+	
+	
+	// 应用的注册信息
+	"appRegister":{
+		"use":0,// 是否开始注册应用
+		"serverName":"",// 注册地址
+		"url":"http://www.baidu.com",// 应用的公网地址
+		"secret":"",// 注册secret
+		"appName":"",// 应用名称
+		"desc":"管理员以及权限管理应用",// 应用描述
+		"icon":"el-icon-circle-plus"// 应用图标
+	}
+
+}

@@ -1,0 +1,19 @@
+{
+    /** 微服务 server端**/
+    "msServer": {
+        "isUse": false, // 是否启动微服务，启用后将自动将logic 的 方法注册为微服务
+        "zkHost": "127.0.0.1:2181", // zk 的 地址
+        "servers":{
+            "user":[
+                "getSysUserByName" // 开放平台级账户信息数据的读取接口
+            ]
+        },
+        "msPort": "12203" // 微服务的监听端口,可以不用更改
+    },
+    /** 微服务 client端**/
+    "msClient": {
+        "zkHost": "127.0.0.1:2181", // zk 的 地址
+        "isUse": false // 是否启动微服务客户端
+    }
+    
+}

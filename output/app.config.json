@@ -1,0 +1,61 @@
+{
+
+	/** 免授权的请求path  逐渐废弃 **/
+	"noAuthPath": [
+		"/api/test/public",
+		"/api/app/registerApp" // 注册应用 对外开放
+	],
+
+
+	/** 需要授权验证的路径  没有在此列表中的path 默认为不经过授权即可访问 **/
+	"authPath": [
+		
+	],
+
+
+
+	//短信验证的 授权信息
+	"smsConfig": {
+		"appId": "fb45345d04664d5aa2d06c01aa73cbf1",
+		"sid": "4b05a574756605a31a3c3eb498681b36",
+		"token": "edb46010a1d4162b6730c685b7a10790"
+	},
+
+	// vip token的 相关配置
+	"vipToken": {
+		"expire":"300" // 五分钟
+	},
+
+	// 注册应用的秘钥
+	"registerAppSecret": "bB&IK&YOK1#pm6Rt!j&R74dd7@j83$9SX6u&xzmF1qdKu$TEN#M9W$nznIa7IIBB2RiK!RQDYBAKhLHay0Omu3gO2wVe8bjbYt^",
+	// 授权中间件的过期时间 单位 秒
+	"dopApiExpire": 1800,
+
+	/*wechat*/
+	"wechat": {
+		"appId": "wx87c9c6ea3a98c2a5",
+		"appSecret": "be12c403263185796c90b54bbe90b6f7",
+		"token": "bxk769XOOw9a83pOBKXeeYixvsMKCAPP",
+		"encodingAESKey": "hmuMuGQKMe8uSIA7WbQCfI341NGOcjyQjh2Dpuv8VKp",
+		"checkSignature": false,
+		"mchId": "1508341351",
+		"apiKey": "OkIusUsgEHJMJnuZSyFGJSOgF5lMUTak",
+		"notifyUrl": "/payNotify",
+		"host": "http://pf.52ds.club",
+		"pfx": "./cert/apiclient_cert.p12"
+	},
+	/* 小程序配置**/
+	"mp": {
+		"appid": "wxa0189f5bdbf6a378",
+		"apps": "746fd7a2877745e2dde8caf995fb 0ba1"
+	},
+
+	/** 阿里OSS配置 **/
+	"oss": {
+		"region": "oss-cn-hangzhou",
+		"accessKeyId": "LTAILkVF8UShpDla",
+		"accessKeySecret": "Fhdo0laJGMAcMOv43n2NjVrLlGdCFt",
+		"expires": 180 //URL的过期时间
+	},
+	"onlyWechat": 0
+}
