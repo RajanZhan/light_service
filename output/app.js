@@ -86,7 +86,7 @@ module.exports = async () => {
     }));
     app.use(bodyParser.urlencoded({
         limit: '50mb',
-        extended: true,
+        extended: false,
         parameterLimit: 50000
     }));
     const cookieKey = 'keyboard 11cat';

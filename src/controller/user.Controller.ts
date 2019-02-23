@@ -9,6 +9,21 @@ export default (path) => {
         next()
     }
 
+    // 测试接口
+    controller.get("/","",async (req:request,res:response)=>{
+        try
+        {
+            $logger.error({msg:"haha"});
+            res.ok("ok");
+        }
+        catch(err)
+        {
+            $logger.error(err);
+             res.error(err.message);
+        }
+    });
+
+    
     // 系统用户授权
     controller.post("/auth", "", async (req, res) => {
 

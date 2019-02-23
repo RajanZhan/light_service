@@ -1,7 +1,7 @@
 var chokidar = require('chokidar');
 const path = require('path');
 const fs = require('fs');
-const baseDevPath = '../src/' + $config.name
+const baseDevPath = '../src/'
 
 var sleep = function (time) {
     return new Promise(function (resolve, reject) {
@@ -64,7 +64,7 @@ module.exports = {
             let from = path.join(__dirname, path1);
             let stat = fs.statSync(from);
             if (stat.isFile()) {
-                let to = path.join(__dirname, path1.replace('src', 'out'));
+                let to = path.join(__dirname, path1.replace('src', 'output'));
                 // 创建读取流
                 let readable = fs.createReadStream(from);
                 // 创建写入流
@@ -217,28 +217,26 @@ module.exports = {
             //return
             //console.log("model logic 自动编译",`src\\${$config.name}\\model`);
             let stat = fs.statSync(path.join(__dirname, path1));
+            //console.log("auto include model and logic");
             if (stat.isFile()) {
-                // let to = path.join(__dirname, path1.replace('src', 'out'));
-                // // 创建读取流
-                // let readable = fs.createReadStream(from);
-                // // 创建写入流
-                // let writable = fs.createWriteStream(to);
-                // // 通过管道来传输流
-                // readable.pipe(writable);
-
+                
+            
                 let oriStr = `
                 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-/** 编译文件 配置 */
-exports.default = {
-    {replace}
-};`
+                Object.defineProperty(exports, "__esModule", { value: true });
+                /** 编译文件 配置 */
+                exports.default = {
+                    {replace}
+                };`
                 let allstr = '';
 
-                let modelstr = `src\\${$config.name}\\model`;
-                let logicstr = `src\\${$config.name}\\logic`
+                // let modelstr = `src\\${$config.name}\\model`;
+                // let logicstr = `src\\${$config.name}\\logic`
+                let modelstr = `src\\model`;
+                let logicstr = `src\\logic`
                 for (let p of autoBuild) {
                     var str = '';
+                    console.log(p);
                     if (p.indexOf(modelstr) != -1) {
                         str = "model:{"
                     } else if (p.indexOf(logicstr) != -1) {

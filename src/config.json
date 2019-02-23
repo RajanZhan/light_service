@@ -1,8 +1,8 @@
 {
 	"version":"1.0.0",
-	"name":"pkgTool",// 应用名称
+	"name":"xiao_qi",// 应用名称
 	"type":"app",// 应用类型 app 为普通应用
-	"port":"82",/* 应用监听的端口 */
+	"port":"83",/* 应用监听的端口 */
 	"host":"127.0.0.1",//绑定的ip地址 127.0.0.1 
 	"debug":"1", /* 1：调试模式，0：为生产模式，用于编译成发布版本  */
 	"cross":1,//1 表示可以跨域， 0 表示禁用跨域访问
@@ -18,11 +18,11 @@
 	"cookie":{
 		"expire":"1200"
 	},
-	"session":0,// 启用session
+	"session":1,// 启用session
 	
 	"db":{
 		"host":"127.0.0.1",
-		"db":"dop_article",
+		"db":"xiao_qi",
 		"uname":"root",
 		"pwd":"11111111"
 	},
@@ -35,7 +35,6 @@
 		"use":"1"
 	},
 
-	
 	
 	// 应用的注册信息
 	"appRegister":{

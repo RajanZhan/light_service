@@ -76,6 +76,18 @@
             this.success({ err_code: 0, data: msg });
         },
 
+         /**
+         * 重定向
+         * @param url 重定向的地址
+         * @param c 301 永久重定向   302 临时重定向
+         * 
+         */
+        rego(url,c)
+        {
+            let code = c?c:302;
+            this.redirect(code, url);
+        },
+
         /**
         * 渲染模板输
         * @param {tpl}  - 模板的名称，无需添加后缀，比如模板index.html，只需要传入index，即可，模板的路径在config.viewPath中定义.
@@ -85,7 +97,7 @@
 
             var tpPath = "";
             if ($config.debug == 1) {
-                tpPath = path.join(__dirname, "../../../src/" + $config.name + "/", $config.viewPath + "/" + tp + ".html")
+                tpPath = path.join(__dirname, "../../src/", $config.viewPath + "/" + tp + ".html")
             }
             else {
                 tpPath = path.join(__dirname, $config.viewPath + "/" + tp + ".html")
